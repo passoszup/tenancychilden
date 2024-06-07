@@ -9,9 +9,9 @@
    Configure localmente oci id user e tenancy.
    Corrigir Permissões da pasta onde esta a chave
    
-```bash
-oci setup repair-file-permissions --file /home/joyce/.oci/sessions/DEFAULT/oci_api_key
-```
+   ```bash
+   oci setup repair-file-permissions --file /home/joyce/.oci/sessions/DEFAULT/oci_api_key
+   ```
 
 3. **Instalar Fn CLI**:
    O Fn Project é usado para desenvolver, testar e deployar funções para Oracle Functions.
@@ -88,19 +88,19 @@ oci setup repair-file-permissions --file /home/joyce/.oci/sessions/DEFAULT/oci_a
   1. Siga apartir do passo 6:
    Log into the Registry using the Auth Token as your password
    
-    ```bash
-    docker login -u 'xxxxxx/xxxx@xxxx.com.br' gru.ocir.io
-     ```
+   ```bash
+   docker login -u 'xxxxxx/xxxx@xxxx.com.br' gru.ocir.io
+   ```
   2. Entre com a senha (passos 7)
   3. Construir a Imagem Docker no diretório contendo o Dockerfile,
      
-  ```bash
-    docker build -t gru.ocir.io/<tenancy-namespace>/<registtrirepo>:tag
-  ```
+   ```bash
+   docker build -t gru.ocir.io/<tenancy-namespace>/<registtrirepo>:tag
+   ```
 
    ```bash
-    docker push gru.ocir.io/<tenancy-namespace>/<registtrirepo>:tag
-  ```
+   docker push gru.ocir.io/<tenancy-namespace>/<registtrirepo>:tag
+   ```
 
 9. **Deployar a Função**:
    Use o CLI do Fn Project para empacotar e deployar sua função na OCI:
