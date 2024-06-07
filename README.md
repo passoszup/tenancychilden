@@ -1,4 +1,4 @@
-Vamos ajustar o passo a passo para garantir que a Oracle Function seja deployada na OCI corretamente e que você possa integrá-la com o API Gateway. Aqui está o guia atualizado:
+
  **Pré-requisites**: Compartment, vcn e subnet container registry.
  
 ### Passo 1: Configurar o Ambiente Local
