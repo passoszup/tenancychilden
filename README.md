@@ -125,7 +125,12 @@ oci setup repair-file-permissions --file /home/joyce/.oci/sessions/DEFAULT/oci_a
 ### Passo 4: Testar a API
 
 1. **Chamar a API**:
+   Os dados como compartment_id, tenancy_name, tenancy_description, home_region, e admin_email que você mencionou são necessários para a criação do tenancy e devem ser 
+    fornecidos pelo usuário ao chamar a API. Eles não são gerados automaticamente; você precisa fornecer esses valores na solicitação à sua API.
    Use `curl` ou qualquer cliente HTTP para chamar sua API.
+   Exemplo de Configuração de Corpo da Requisição
+   Quando você faz a chamada à API para criar um tenancy, você deve enviar esses dados no corpo da solicitação (payload). Aqui está um exemplo de como isso pode ser feito 
+    usando curl:
 
    ```bash
    curl -X POST https://<api-gateway-endpoint>/<resource-path> \
