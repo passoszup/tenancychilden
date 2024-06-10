@@ -13,7 +13,7 @@
    oci setup repair-file-permissions --file /home/joyce/.oci/sessions/DEFAULT/oci_api_key
    ```
 
-3. **Instalar Fn CLI**:
+2. **Instalar Fn CLI**:
    O Fn Project é usado para desenvolver, testar e deployar funções para Oracle Functions.
    Siga as instruções na [documentação do Fn Project](https://github.com/fnproject/cli#install).
 
@@ -102,7 +102,7 @@
    docker push gru.ocir.io/<tenancy-namespace>/<registtrirepo>:tag
    ```
 
-9. **Deployar a Função**:
+8. **Deployar a Função**:
    Use o CLI do Fn Project para empacotar e deployar sua função na OCI:
 
    ```bash
@@ -113,14 +113,39 @@
 
 ### Passo 3: Configurar o API Gateway
 
-1. **Criar um API Gateway**:
-   No Console OCI, navegue para "Developer Services" > "API Gateway" e crie um novo API Gateway.
+1. **Criar um API Gateway**
+No Console OCI, navegue para "Developer Services" > "API Gateway" e crie um novo API Gateway.
 
-2. **Criar uma API**:
-   Dentro do API Gateway, crie uma nova API e configure um endpoint que aponte para sua função.
+2. **Criar um Deployment**
+Navegar até o API Gateway e selecione o API Gateway que você criou.
 
-3. **Configurar o Endpoint da API**:
-   No API Gateway, configure um recurso e uma rota para a função que você criou. O método HTTP deve ser POST, e a função deve ser a que você acabou de deployar.
+ 2.1. Criar um Deployment:
+ Clique em "Create Deployment".
+ Preencha os detalhes necessários:
+ * Name: Nome do Deployment.
+ * Compartment: Compartimento onde o Deployment será criado.
+ * Path Prefix: Prefixo de caminho para a sua API, por exemplo, /api.
+ * Route Type: Selecione "HTTP_BACKEND".
+
+ 2.2 Configurar a Rota: 
+ Clique em "Next: Routes".
+ Clique em "Add Route".
+ * Path: O caminho para a rota, por exemplo, /createTenancy.
+ * Methods: Selecione POST.
+ * Type: Selecione "Function".
+ * Function: Selecione a função que você acabou de deployar.
+ * Invocation Policy: (Opcional) Configure políticas de invocação, se necessário.
+
+ 2.3 Revisar e Criar o Deployment:
+ * Clique em "Next" para revisar as configurações.
+ * Clique em "Create" para criar o Deployment.
+
+3.  **Testar o Endpoint**
+Agora que o Deployment está configurado, você pode testar a API.
+
+Obter o Endpoint do API Gateway
+* Navegue para o API Gateway e selecione o Deployment que você acabou de criar.
+* Copie a URL do Deployment.
 
 ### Passo 4: Testar a API
 
