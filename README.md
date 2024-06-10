@@ -84,7 +84,7 @@
    CMD ["func.py"]
    ```
 
-7. **Empurrar a Imagem Docker para o Registro da OCI**
+7. **Empurrar a Imagem Docker para o Registro da OCI**:
   1. Siga apartir do passo 6:
    Log into the Registry using the Auth Token as your password
    
@@ -113,10 +113,10 @@
 
 ### Passo 3: Configurar o API Gateway
 
-1. **Criar um API Gateway**
+1. **Criar um API Gateway**:
 No Console OCI, navegue para "Developer Services" > "API Gateway" e crie um novo API Gateway.
 
-2. **Criar um Deployment**
+2. **Criar um Deployment**:
 Navegar até o API Gateway e selecione o API Gateway que você criou.
 
  2.1. Criar um Deployment:
@@ -140,7 +140,7 @@ Navegar até o API Gateway e selecione o API Gateway que você criou.
  * Clique em "Next" para revisar as configurações.
  * Clique em "Create" para criar o Deployment.
 
-3.  **Testar o Endpoint**
+3.  **Testar o Endpoint**:
 Agora que o Deployment está configurado, você pode testar a API.
 
 Obter o Endpoint do API Gateway
